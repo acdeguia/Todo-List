@@ -92,6 +92,13 @@ function App(props) {
         </div>
         
         <h2 id="list-heading">{headingText}</h2>
+        <div className="tasks-heading">
+          <h4>TASKS</h4>
+          <div>
+            <h4>EDIT</h4>
+            <h4>DELETE</h4>
+          </div>
+        </div>
         <ul
           role="list"
           className="todo-list stack-large stack-exception"

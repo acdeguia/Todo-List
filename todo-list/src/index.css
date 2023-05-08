@@ -14,7 +14,7 @@ li {
 .todoapp {
     height: 100vh;
     display: grid;
-    grid-template-columns: 321px 1fr;
+    grid-template-columns: 321px 1000px;
     gap: 77px;
 }
 
@@ -25,7 +25,10 @@ li {
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
     padding-top: 45px;
+   text-align: center;
 }
 
 .tasks {
@@ -33,8 +36,6 @@ li {
     justify-content: space-between;
     align-items: center;
 padding: 7px 12px;
-gap: 760px;
-max-width: 1410px;
 height: 57px;
 background: #FFFFFF;
 border-top: 2px solid #1E6007;
@@ -49,9 +50,10 @@ border-radius: 5px;
 
 .filters {
     display: flex;
-    justify-content: center;
     gap: 15px;
 }
+
+
 
 .todo-list {
     display: flex;
@@ -85,4 +87,22 @@ height: 30px;
 input[type=checkbox]:checked:before {
 
 	color: black !important;
+}
+
+.edit-del {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.tasks-heading, .tasks-heading div {
+    display: flex;
+}
+
+.tasks-heading {
+    justify-content: space-between;
+}
+
+.tasks-heading div {
+    gap: 25px;
 }

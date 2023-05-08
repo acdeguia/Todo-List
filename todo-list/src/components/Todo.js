@@ -32,7 +32,7 @@ export default function Todo(props) {
           onChange={handleChange}
         />
       </div>
-      <div className="btn-group">
+      <div className="edit-del">
         <button
           type="button"
           className="btn todo-cancel"
@@ -61,7 +61,7 @@ export default function Todo(props) {
           {props.name}
         </label>
       </div>
-      <div className="btn-group">
+      <div className="edit-del">
        
         <img src={Edit} onClick={() => setEditing(true)} />
         
