@@ -55,8 +55,9 @@ color: #074F60;
 
 .filters {
     display: flex;
-    gap: 15px;
+    gap: 34px;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 
@@ -65,6 +66,7 @@ color: #074F60;
     display: flex;
     flex-direction: column;
     gap: 7px;
+    margin-bottom: 29px;
 }
 
 input[type=checkbox] {
@@ -98,7 +100,7 @@ input[type=checkbox]:checked:before {
 .edit-del {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 80px;
 }
 
 .tasks-heading, .tasks-heading div {
@@ -123,4 +125,27 @@ padding-left: 120px;
 #list-heading {
     font-weight: 400;
 font-size: 23px;
+}
+
+button
+{
+	border:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+
+}
+
+button span {
+    font-size: 18px;
+}
+
+.toggle-btn:focus {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.toggle-btn {
+    cursor: pointer ;
 }

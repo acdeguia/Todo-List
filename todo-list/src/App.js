@@ -76,7 +76,7 @@ function App(props) {
     />
   ));
 
-  // const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task';
+  const tasksNoun = taskList.length !== 1 && taskList.length !== 0 ? 'TASKS' : 'TASK';
   const headingText = `TOTAL: ${taskList.length}`;
 
   return (
@@ -93,7 +93,7 @@ function App(props) {
         
        
         <div className="tasks-heading">
-          <h4>TASKS</h4>
+          <h4>{tasksNoun}</h4>
           <div>
             <h4>EDIT</h4>
             <h4>DELETE</h4>
