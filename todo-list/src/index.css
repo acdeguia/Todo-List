@@ -14,7 +14,7 @@ li {
 .todoapp {
     height: 100vh;
     display: grid;
-    grid-template-columns: 321px .75fr;
+    grid-template-columns: 321px .90fr;
     gap: 77px;
 }
 
@@ -28,7 +28,7 @@ li {
     display: flex;
     flex-direction: column;
     padding-top: 45px;
-   text-align: center;
+
 }
 
 .tasks {
@@ -42,6 +42,10 @@ border-top: 2px solid #1E6007;
 box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.05);
 border-radius: 5px;
 width: 100%;
+font-weight: 400;
+font-size: 20px;
+
+color: #074F60;
 }
 
 .task {
@@ -104,9 +108,19 @@ input[type=checkbox]:checked:before {
 .tasks-heading {
     justify-content: space-between;
     padding-bottom: 23px;
+    font-weight: 400;
+font-size: 22px;
+line-height: 28px;
+color: #000000;
+padding-left: 120px;
 }
 
 .tasks-heading div {
     gap: 25px;
     
+}
+
+#list-heading {
+    font-weight: 400;
+font-size: 23px;
 }

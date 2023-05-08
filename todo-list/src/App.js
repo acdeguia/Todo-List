@@ -76,8 +76,8 @@ function App(props) {
     />
   ));
 
-  const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task';
-  const headingText = `${taskList.length} ${tasksNoun} remaining`;
+  // const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task';
+  const headingText = `TOTAL: ${taskList.length}`;
 
   return (
     <div className="todoapp stack-large">
@@ -91,7 +91,7 @@ function App(props) {
         {filterList}
         </div>
         
-        <h2 id="list-heading">{headingText}</h2>
+       
         <div className="tasks-heading">
           <h4>TASKS</h4>
           <div>
@@ -106,6 +106,7 @@ function App(props) {
         >
           {taskList}
         </ul>
+        <h2 id="list-heading">{headingText}</h2>
         <Form addTask={addTask} />
       </div>
     </div>
