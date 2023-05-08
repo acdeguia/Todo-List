@@ -3,6 +3,8 @@ import Edit from '../images/edit.svg'
 import Delete from '../images/delete.svg'
 
 export default function Todo(props) {
+
+  
   const [isEditing, setEditing] = useState(false);
 
   const [newName, setNewName] = useState("");
@@ -22,7 +24,7 @@ export default function Todo(props) {
     <form className="tasks" onSubmit={handleSubmit}>
       <div className="form-group">
         <label className="todo-label" htmlFor={props.id}>
-          New name for {props.name}
+
         </label>
         <input
           id={props.id}
@@ -39,11 +41,9 @@ export default function Todo(props) {
           onClick={() => setEditing(false)}
         >
           Cancel
-          {/* <span className="visually-hidden">renaming {props.name}</span> */}
         </button>
         <button type="submit" className="btn btn__primary todo-edit">
           Save
-          {/* <span className="visually-hidden">new name for {props.name}</span> */}
         </button>
       </div>
     </form>
@@ -63,11 +63,11 @@ export default function Todo(props) {
       </div>
       <div className="edit-del">
        
-        <img src={Edit} onClick={() => setEditing(true)} />
+        <img alt="edit icon" src={Edit} onClick={() => setEditing(true)} />
         
         
-          <img src={Delete}  onClick={() => props.deleteTask(props.id)} />
-
+          <img alt="delete icon" src={Delete}  onClick={() => props.deleteTask(props.id)} />
+        
         
       </div>
     </div>

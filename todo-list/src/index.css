@@ -66,7 +66,7 @@ color: #074F60;
     display: flex;
     flex-direction: column;
     gap: 7px;
-    margin-bottom: 29px;
+    margin-bottom: 20px;
 }
 
 input[type=checkbox] {
@@ -125,6 +125,7 @@ padding-left: 120px;
 #list-heading {
     font-weight: 400;
 font-size: 23px;
+margin-bottom: 20px;
 }
 
 button
@@ -144,8 +145,30 @@ button span {
 .toggle-btn:focus {
     text-decoration: underline;
     font-weight: 600;
+    color: #074F60;
 }
 
 .toggle-btn {
     cursor: pointer ;
+}
+
+.input {
+    width: 500px;
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #000000;
+box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.05);
+margin-bottom: 15px;
+font-weight: 400;
+font-size: 20px;
+color: #074F60;
+margin-right: 15px;
+}
+
+.input::placeholder {
+    color: rgba(7, 79, 96, 0.84);
+}
+
+.input:focus {
+    outline: 0;
 }

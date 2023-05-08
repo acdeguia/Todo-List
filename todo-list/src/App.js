@@ -18,11 +18,13 @@ const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   function addTask(name) {
     const newTask = { id: `todo-${nanoid()}`, name, completed: false };
     setTasks([...tasks, newTask]);
   }
+
 
   function deleteTask(id) {
     const remainingTasks = tasks.filter((task) => id !== task.id);
@@ -106,8 +108,9 @@ function App(props) {
         >
           {taskList}
         </ul>
-        <h2 id="list-heading">{headingText}</h2>
         <Form addTask={addTask} />
+        <h2 id="list-heading">{headingText}</h2>
+        
       </div>
     </div>
   );

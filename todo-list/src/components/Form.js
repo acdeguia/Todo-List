@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Plus from '../images/plus.svg'
 
 function Form(props) {
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
     const [name, setName] = useState('');
 
@@ -31,6 +33,7 @@ function Form(props) {
             </label>
           </h2> */}
           <input
+          placeholder="Add task"
             type="text"
             id="new-todo-input"
             className="input input__lg"
@@ -40,7 +43,7 @@ function Form(props) {
             onChange={handleChange}
           />
           <button type="submit" className="btn btn__primary btn__lg">
-            Add
+          <img alt="add button" src={Plus} />
           </button>
         </form>
       );
