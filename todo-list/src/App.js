@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Todo from "./components/Todo";
 import Form from "./components/Form";
-import FilterButton from "./components/FilterButton";
+import SideNav from "./components/SideNav";
 import { nanoid } from "nanoid";
 
 
@@ -68,7 +68,7 @@ function App(props) {
   ));
 
   const filterList = FILTER_NAMES.map((name) => (
-    <FilterButton
+    <SideNav
       key={name}
       name={name}
       isPressed={name === filter}
@@ -81,19 +81,26 @@ function App(props) {
 
   return (
     <div className="todoapp stack-large">
-      <h1>ToDue</h1>
-      <Form addTask={addTask} />
-      <div className="filters btn-group stack-exception">
-      {filterList}
+      
+      <div className="side-nav">
+        <h1>ToDue</h1>
+        <div className="filters btn-group stack-exception">
+        {filterList}
+        </div>
       </div>
-      <h2 id="list-heading">{headingText}</h2>
-      <ul
-        role="list"
-        className="todo-list stack-large stack-exception"
-        aria-labelledby="list-heading"
-      >
-        {taskList}
-      </ul>
+      <div className="main">
+        
+        
+        <h2 id="list-heading">{headingText}</h2>
+        <ul
+          role="list"
+          className="todo-list stack-large stack-exception"
+          aria-labelledby="list-heading"
+        >
+          {taskList}
+        </ul>
+        <Form addTask={addTask} />
+      </div>
     </div>
   );
 }

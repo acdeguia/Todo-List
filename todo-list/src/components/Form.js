@@ -4,13 +4,22 @@ function Form(props) {
 
     const [name, setName] = useState('');
 
+    function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
     function handleChange(e) {
         setName(e.target.value);
       }
     
       function handleSubmit(e) {
         e.preventDefault();
-        props.addTask(name);
+
+        if(name == ''){
+          alert('empty')
+        }else{
+          props.addTask(capitalizeFirstLetter(name));
+        }
         setName("");
       }
 

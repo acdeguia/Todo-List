@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import Edit from '../images/edit.svg'
+import Delete from '../images/delete.svg'
 
 export default function Todo(props) {
   const [isEditing, setEditing] = useState(false);
 
-  const [newName, setNewName] = useState('');
+  const [newName, setNewName] = useState("");
 
   function handleChange(e) {
     setNewName(e.target.value);
@@ -17,19 +19,18 @@ export default function Todo(props) {
   }
 
   const editingTemplate = (
-    <form className="stack-small" onSubmit={handleSubmit}>
-
+    <form className="tasks" onSubmit={handleSubmit}>
       <div className="form-group">
         <label className="todo-label" htmlFor={props.id}>
           New name for {props.name}
         </label>
         <input
-  id={props.id}
-  className="todo-text"
-  type="text"
-  value={newName}
-  onChange={handleChange}
-/>
+          id={props.id}
+          className="todo-text"
+          type="text"
+          value={newName}
+          onChange={handleChange}
+        />
       </div>
       <div className="btn-group">
         <button
@@ -38,18 +39,18 @@ export default function Todo(props) {
           onClick={() => setEditing(false)}
         >
           Cancel
-          <span className="visually-hidden">renaming {props.name}</span>
+          {/* <span className="visually-hidden">renaming {props.name}</span> */}
         </button>
         <button type="submit" className="btn btn__primary todo-edit">
           Save
-          <span className="visually-hidden">new name for {props.name}</span>
+          {/* <span className="visually-hidden">new name for {props.name}</span> */}
         </button>
       </div>
     </form>
   );
   const viewTemplate = (
-    <div className="stack-small">
-      <div className="c-cb">
+    <div className="tasks">
+      <div className="task">
         <input
           id={props.id}
           type="checkbox"
@@ -61,16 +62,13 @@ export default function Todo(props) {
         </label>
       </div>
       <div className="btn-group">
-        <button type="button" className="btn" onClick={() => setEditing(true)}>
-          Edit <span className="visually-hidden">{props.name}</span>
-        </button>
-        <button
-          type="button"
-          className="btn btn__danger"
-          onClick={() => props.deleteTask(props.id)}
-        >
-          Delete <span className="visually-hidden">{props.name}</span>
-        </button>
+       
+        <img src={Edit} onClick={() => setEditing(true)} />
+        
+        
+          <img src={Delete}  onClick={() => props.deleteTask(props.id)} />
+
+        
       </div>
     </div>
   );
