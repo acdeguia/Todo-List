@@ -84,12 +84,12 @@ function App(props) {
       
       <div className="side-nav">
         <h1>ToDue</h1>
-        <div className="filters btn-group stack-exception">
-        {filterList}
-        </div>
+        
       </div>
       <div className="main">
-        
+      <div className="filters btn-group stack-exception">
+        {filterList}
+        </div>
         
         <h2 id="list-heading">{headingText}</h2>
         <ul
