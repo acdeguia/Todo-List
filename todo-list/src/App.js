@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Todo from "./components/Todo";
 import Form from "./components/Form";
-import SideNav from "./components/SideNav";
+import Filter from "./components/Filter";
 import { nanoid } from "nanoid";
 
 
@@ -68,7 +68,7 @@ function App(props) {
   ));
 
   const filterList = FILTER_NAMES.map((name) => (
-    <SideNav
+    <Filter
       key={name}
       name={name}
       isPressed={name === filter}

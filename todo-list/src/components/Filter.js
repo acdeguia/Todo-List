@@ -1,6 +1,6 @@
 import React from "react";
 
-function SideNav(props) {
+function Filter(props) {
     return (
       <button
         type="button"
@@ -15,4 +15,4 @@ function SideNav(props) {
     );
   }
 
-export default SideNav;
+export default Filter;
