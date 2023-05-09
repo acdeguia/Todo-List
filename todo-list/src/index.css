@@ -44,7 +44,6 @@ border-radius: 5px;
 width: 100%;
 font-weight: 400;
 font-size: 20px;
-
 color: #074F60;
 }
 
@@ -171,4 +170,77 @@ margin-right: 15px;
 
 .input:focus {
     outline: 0;
+}
+
+.btn_add {
+    cursor: pointer;
+}
+
+.todo-text {
+    border: none;
+    outline: 0;
+    width: 300px;
+    font-weight: 400;
+font-size: 20px;
+color: #074F60;
+}
+
+.todo-text::placeholder {
+    font-size: 15px;
+}
+
+.delete-pop-up {
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    width: 435px;
+height: 176px;
+background: #FFFFFF;
+box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.25);
+    
+}
+
+.delete-header {
+    font-size: 25px;
+    text-align: center;
+    align-self: stretch;
+    font-weight: 700;
+    background: #E7BE7D;
+    color: #FFFFFF;
+}
+
+.task-name {
+    font-size: 20px;
+    text-align: center;
+
+color: #074F60;
+align-self: stretch;
+height: 89px;
+padding-top: 15px;
+}
+
+.yes {
+    width: 68px;
+height: 45px;
+
+background: rgba(177, 0, 0, 0.32);
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+text-align: center;
+text-transform: uppercase;
+}
+
+.cancel {
+    font-size: 20px;
+text-align: center;
+text-transform: uppercase;
+width: 122px;
+background: #B7CCB0;
+height: 45px;
+}
+
+.btn-grp {
+    display: flex;
+    justify-content: center;
 }

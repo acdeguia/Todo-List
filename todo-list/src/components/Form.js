@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Plus from '../images/plus.svg'
 
 function Form(props) {
-  const [showConfirmation, setShowConfirmation] = useState(false);
-
     const [name, setName] = useState('');
 
     function capitalizeFirstLetter(string) {
@@ -17,7 +15,7 @@ function Form(props) {
       function handleSubmit(e) {
         e.preventDefault();
 
-        if(name == ''){
+        if(name === ''){
           alert('empty')
         }else{
           props.addTask(capitalizeFirstLetter(name));
@@ -27,11 +25,6 @@ function Form(props) {
 
     return (
         <form onSubmit={handleSubmit}>
-          {/* <h2 className="label-wrapper">
-            <label htmlFor="new-todo-input" className="label__lg">
-              What needs to be done?
-            </label>
-          </h2> */}
           <input
           placeholder="Add task"
             type="text"
@@ -42,7 +35,7 @@ function Form(props) {
             value={name}
             onChange={handleChange}
           />
-          <button type="submit" className="btn btn__primary btn__lg">
+          <button type="submit" className="btn btn_add">
           <img alt="add button" src={Plus} />
           </button>
         </form>
