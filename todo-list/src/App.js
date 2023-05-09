@@ -4,6 +4,7 @@ import Form from "./components/Form";
 import Filter from "./components/Filter";
 import { nanoid } from "nanoid";
 
+import Inbox from './images/inbox.svg'
 
 
 const FILTER_MAP = {
@@ -84,10 +85,18 @@ function App(props) {
     <div className="todoapp stack-large">
       
       <div className="side-nav">
-        <h1>ToDue</h1>
+        <h1 className="logo">ToDue</h1>
         
       </div>
       <div className="main">
+        <div className="inbox">
+          <h2>Inbox</h2>
+          <img
+            alt="inbox icon"
+            src={Inbox}
+            className="inbox-icon"
+          />
+        </div>
       <div className="filters btn-group stack-exception">
         {filterList}
         </div>

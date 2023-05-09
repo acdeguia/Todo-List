@@ -9,6 +9,11 @@ export default function Todo(props) {
 
   const [showConfirmation, setShowConfirmation] = useState(false);
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+
   function handleDelete(e) {
     props.deleteTask(props.id);
     setShowConfirmation(false);
@@ -20,9 +25,13 @@ export default function Todo(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.editTask(props.id, newName);
-    setNewName("");
-    setEditing(false);
+    if (newName === "") {
+      alert("empty");
+    } else {
+      props.editTask(props.id, capitalizeFirstLetter(newName));
+      setNewName("");
+      setEditing(false);
+    }
   }
 
   const editingTemplate = (
@@ -39,15 +48,15 @@ export default function Todo(props) {
         />
       </div>
       <div className="edit-del">
+        <button type="submit" className="save">
+          Save
+        </button>
         <button
           type="button"
-          className="btn todo-cancel"
+          className="cancel-edit"
           onClick={() => setEditing(false)}
         >
           Cancel
-        </button>
-        <button type="submit" className="btn btn__primary todo-edit">
-          Save
         </button>
       </div>
     </form>
@@ -74,12 +83,19 @@ export default function Todo(props) {
           onClick={() => setShowConfirmation(true)}
         />
         {showConfirmation && (
-          <div className="delete-pop-up">
-            <p className="delete-header">DELETE TASK</p>
+          <div className="todo-pop-up">
+            <p className="todo-header">DELETE TASK</p>
             <p className="task-name">{props.name}?</p>
             <div className="btn-grp">
-              <button className="yes" onClick={handleDelete}>Yes</button>
-              <button className="cancel" onClick={() => setShowConfirmation(false)}>Cancel</button>
+              <button className="yes" onClick={handleDelete}>
+                Yes
+              </button>
+              <button
+                className="cancel"
+                onClick={() => setShowConfirmation(false)}
+              >
+                Cancel
+              </button>
             </div>
           </div>
         )}
