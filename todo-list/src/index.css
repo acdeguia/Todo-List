@@ -74,6 +74,10 @@ color: #FFFFFF;
   margin-bottom: 20px;
 }
 
+.edit-icon, .delete-icon {
+  cursor: pointer;
+}
+
 input[type="checkbox"] {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -224,7 +228,7 @@ button span {
   width: 68px;
   height: 45px;
 
-  background: rgba(177, 0, 0, 0.32);
+  /* background: rgba(177, 0, 0, 0.32); */
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
@@ -232,12 +236,17 @@ button span {
   text-transform: uppercase;
 }
 
+.yes:hover, .cancel:hover {
+  background-color: #074F60;
+  color: white;
+}
+
 .cancel {
   font-size: 20px;
   text-align: center;
   text-transform: uppercase;
   width: 122px;
-  background: #b7ccb0;
+  /* background: #b7ccb0; */
   height: 45px;
 }
 

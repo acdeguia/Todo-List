@@ -73,6 +73,8 @@ export default function Todo(props) {
         <label className="todo-label" htmlFor={props.id}>
           {props.name}
         </label>
+        <div>{props.dueDate && props.dueDate.toDateString() } </div>
+        
       </div>
       <div className="edit-del">
         <img alt="edit icon" src={Edit} onClick={() => setEditing(true)} />

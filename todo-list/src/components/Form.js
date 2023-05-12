@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Plus from "../images/plus.svg";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function Form(props) {
   const [name, setName] = useState("");
+  const [dueDate, setDueDate] = useState(null);
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -18,9 +21,10 @@ function Form(props) {
     if (name === "") {
       alert("empty");
     } else {
-      props.addTask(capitalizeFirstLetter(name));
+      props.addTask(name, dueDate);
     }
     setName("");
+    setDueDate(null);
   }
 
   return (
@@ -34,6 +38,11 @@ function Form(props) {
         autoComplete="off"
         value={name}
         onChange={handleChange}
+      />
+      <DatePicker
+        selected={dueDate} // Set the selected date
+        onChange={(date) => setDueDate(date)} // Update the dueDate state
+        placeholderText="Select due date"
       />
       <button type="submit" className="btn btn_add">
         <img alt="add button" src={Plus} />

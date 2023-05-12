@@ -20,8 +20,9 @@ const FILTER_NAMES = Object.keys(FILTER_MAP);
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
 
-  function addTask(name) {
-    const newTask = { id: `todo-${nanoid()}`, name, completed: false };
+  function addTask(name, dueDate) {
+    const newTask = { id: `todo-${nanoid()}`, name, dueDate: dueDate !== null ? new Date(dueDate) : null, completed: false };
+    console.log(newTask.dueDate.toDateString())
     setTasks([...tasks, newTask]);
   }
 
@@ -110,7 +111,6 @@ function App(props) {
           </div>
         </div>
         <ul
-          role="list"
           className="todo-list stack-large stack-exception"
           aria-labelledby="list-heading"
         >
