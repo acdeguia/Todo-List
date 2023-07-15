@@ -1,29 +1,35 @@
 import React, { useState } from "react";
-import Edit from "../images/edit.svg";
-import Delete from "../images/delete.svg";
+// import Edit from "../images/edit.svg";
+// import Delete from "../images/delete.svg";
 
-export default function Todo(props) {
+interface TodoProps {
+  id: string;
+  name: string;
+  completed: boolean;
+  deleteTask: (id: string) => void;
+  toggleTaskCompleted: (id: string) => void;
+  editTask: (id: string, newName: string) => void;
+}
+
+export default function Todo(props: TodoProps) {
   const [isEditing, setEditing] = useState(false);
-
   const [newName, setNewName] = useState("");
-
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  function capitalizeFirstLetter(string) {
+  function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-
-  function handleDelete(e) {
+  function handleDelete() {
     props.deleteTask(props.id);
     setShowConfirmation(false);
   }
 
-  function handleChange(e) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setNewName(e.target.value);
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (newName === "") {
       alert("empty");
@@ -61,6 +67,7 @@ export default function Todo(props) {
       </div>
     </form>
   );
+
   const viewTemplate = (
     <div className="tasks">
       <div className="task">
@@ -73,17 +80,16 @@ export default function Todo(props) {
         <label className="todo-label" htmlFor={props.id}>
           {props.name}
         </label>
-        <div>{props.dueDate && props.dueDate.toDateString() } </div>
-        
       </div>
       <div className="edit-del">
-        <img alt="edit icon" src={Edit} onClick={() => setEditing(true)} />
-
-        <img
+        {/* <img alt="edit icon" src={Edit} onClick={() => setEditing(true)} /> */}
+        <button onClick={() => setEditing(true)}>EDIT</button>
+        {/* <img
           alt="delete icon"
           src={Delete}
           onClick={() => setShowConfirmation(true)}
-        />
+        /> */}
+        <button onClick={() => setShowConfirmation(true)}>DELETE</button>
         {showConfirmation && (
           <div className="todo-pop-up">
             <p className="todo-header">DELETE TASK</p>

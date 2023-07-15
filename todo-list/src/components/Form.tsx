@@ -1,30 +1,32 @@
 import React, { useState } from "react";
-import Plus from "../images/plus.svg";
-import DatePicker from 'react-datepicker';
+// import Plus from "../images/plus.svg";
+// import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-function Form(props) {
-  const [name, setName] = useState("");
-  const [dueDate, setDueDate] = useState(null);
+interface FormProps {
+  addTask: (name: string) => void;
+}
 
-  function capitalizeFirstLetter(string) {
+function Form(props: FormProps) {
+  const [name, setName] = useState("");
+
+  function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  function handleChange(e) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setName(e.target.value);
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (name === "") {
       alert("empty");
     } else {
-      props.addTask(name, dueDate);
+      props.addTask(capitalizeFirstLetter(name));
     }
     setName("");
-    setDueDate(null);
   }
 
   return (
@@ -33,19 +35,15 @@ function Form(props) {
         placeholder="Add task"
         type="text"
         id="new-todo-input"
-        className="input input__lg"
+        className="input"
         name="text"
         autoComplete="off"
         value={name}
         onChange={handleChange}
       />
-      <DatePicker
-        selected={dueDate} // Set the selected date
-        onChange={(date) => setDueDate(date)} // Update the dueDate state
-        placeholderText="Select due date"
-      />
       <button type="submit" className="btn btn_add">
-        <img alt="add button" src={Plus} />
+        {/* <img alt="add button" src={Plus} /> */}
+        ADD
       </button>
     </form>
   );

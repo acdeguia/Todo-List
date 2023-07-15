@@ -283,17 +283,20 @@ button span {
 height: 20px;
 }
 
+.inbox_icon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .inbox{
 display: flex;
 align-items: center;
-gap: 15px;
+justify-content: space-between;
 margin-bottom: 15px;
 margin-top: 50px;
 font-weight: 400;
 font-size: 20px;
 line-height: 38px;
-/* identical to box height */
-
-
 color: #074F60;
 }
