@@ -3,10 +3,12 @@ import Todo from "./components/Todo";
 import Form from "./components/Form";
 import Filter from "./components/Filter";
 import { nanoid } from "nanoid";
+import SideNav from "./components/SideNav";
 
 interface Task {
   id: string;
   name: string;
+  priority: string;
   completed: boolean;
 }
 
@@ -25,14 +27,16 @@ interface AppProps {
 function App(props: AppProps) {
   const [tasks, setTasks] = useState<Task[]>(props.tasks);
 
-  function addTask(name: string) {
+  function addTask(name: string, priority: string) {
     const newTask: Task = {
       id: `todo-${nanoid()}`,
       name,
+      priority,
       completed: false
     };
 
     setTasks([...tasks, newTask]);
+    console.log(newTask)
   }
 
   function deleteTask(id: string) {
@@ -68,6 +72,7 @@ function App(props: AppProps) {
       <Todo
         id={task.id}
         name={task.name}
+        priority={task.priority}
         completed={task.completed}
         key={task.id}
         toggleTaskCompleted={toggleTaskCompleted}
@@ -90,9 +95,7 @@ function App(props: AppProps) {
 
   return (
     <div className="todoapp stack-large">
-      <div className="side-nav">
-        <h1 className="logo">ToDue</h1>
-      </div>
+     <SideNav />
       <div className="main">
         <div className="inbox">
           <div className="inbox_icon">
@@ -107,6 +110,13 @@ function App(props: AppProps) {
           <h3>{total}</h3>
         </div>
         <div className="filters btn-group ">{filterList}</div>
+        <div className="task_heading">
+          <p>TASK</p>
+          <div className="flex edit_del">
+            <p>EDIT</p>
+            <p>DELETE</p>
+          </div>
+        </div>
         <ul className="todo-list" aria-labelledby="list-heading">
           {taskList}
         </ul>

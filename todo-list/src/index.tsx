@@ -4,9 +4,9 @@ import App from "./App";
 import "./index.css";
 
 const DATA = [
-  { id: "todo-0", name: "Finish reading Jane Eyres ", completed: true },
-  { id: "todo-1", name: "Write email to John Doe ", completed: false },
-  { id: "todo-2", name: "Finish assignment in Physics", completed: false }
+  { id: "todo-0", name: "Finish reading Jane Eyres ", priority: "low", completed: true },
+  { id: "todo-1", name: "Write email to John Doe ", priority: "medium", completed: false },
+  { id: "todo-2", name: "Finish assignment in Physics", priority: "high", completed: false }
 ];
 
 const root = document.getElementById("root");
