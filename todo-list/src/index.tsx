@@ -1,20 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import "./index.css";
+import { HashRouter } from "react-router-dom";
 
-const DATA = [
-  { id: "todo-0", name: "Finish reading Jane Eyres ", priority: "low", completed: true },
-  { id: "todo-1", name: "Write email to John Doe ", priority: "medium", completed: false },
-  { id: "todo-2", name: "Finish assignment in Physics", priority: "high", completed: false }
-];
+import "./index.css";
+import Entry from "./Entry";
+
 
 const root = document.getElementById("root");
 
 if (root) {
   ReactDOM.render(
     <React.StrictMode>
-      <App tasks={DATA} />
+      <HashRouter>
+        <Entry/>
+      </HashRouter>
     </React.StrictMode>,
     root
   );
