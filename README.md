@@ -2,9 +2,7 @@
 ➠ [LIVE DEMO](https://acdeguia.github.io/Todo-List/)
 
 ### Objective/s
-To develop proficiency in creating and styling forms using HTML.
-
-* Design and Develop User Interface.
+* Design and develop the user interface using HTML, CSS, React, and TypeScript.
 * Implement Add, Edit, and Delete task functionalities.
 * Enable task filtering options.
 <br />
