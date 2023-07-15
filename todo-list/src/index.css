@@ -338,3 +338,7 @@ color: #074F60;
 font-size: 18px;
 margin-right: 15px;
 }
+
+.checked {
+  text-decoration: line-through;
+}

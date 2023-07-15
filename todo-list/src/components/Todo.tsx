@@ -14,6 +14,8 @@ export default function Todo(props: TodoProps) {
   const [isEditing, setEditing] = useState(false);
   const [newName, setNewName] = useState("");
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [isChecked, setIsChecked] = useState(props.completed);
+
 
   function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -68,14 +70,18 @@ export default function Todo(props: TodoProps) {
   );
 
   const viewTemplate = (
-    <div className={`tasks ${props.priority}`}>
+    <div className={`tasks ${props.priority} ${isChecked ? "checked" : ""}`}>
       <div className="task">
-        <input
-          id={props.id}
-          type="checkbox"
-          defaultChecked={props.completed}
-          onChange={() => props.toggleTaskCompleted(props.id)}
-        />
+      <input
+  id={props.id}
+  type="checkbox"
+  defaultChecked={props.completed}
+  onChange={() => {
+    props.toggleTaskCompleted(props.id);
+    setIsChecked(!isChecked);
+  }}
+/>
+
         <label className="todo-label" htmlFor={props.id}>
           {props.name}
         </label>
