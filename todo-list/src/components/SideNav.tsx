@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom'
 const SideNav = () => {
     return (
         <div className="side-nav">
-            <Link to={"/"}>
                 <h1 className="logo">ToDue</h1>
-            </Link>
-            <div>
+
+            {/* <div>
                 <h2>Home</h2>
                 <ul>
                     <li>Inbox</li>
@@ -18,7 +17,7 @@ const SideNav = () => {
 
             <div>
                 Projects
-            </div>
+            </div> */}
         </div>
     )
 }
